@@ -37,7 +37,7 @@
 }
 
 .terminal-body {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1.5rem;
   font-family: "Roboto", sans-serif;
 }
 
@@ -66,4 +66,49 @@
   color: white;
   font-weight: 100;
   margin: 0 0.5rem;
+}
+
+.terminal-output {
+  margin: 0.5rem 0;
+  white-space: pre;
+  text-align: center;
+}
+
+.name-text {
+  font-size: 40px;
+}
+
+.role-text {
+  font-weight: 100;
+}
+
+.stack-container,
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: white;
+  width: 80%;
+  margin: 1.5rem auto;
+}
+
+.github {
+  font-weight: bold;
+}
+
+.github:visited {
+  color: white;
+}
+
+.github:hover {
+  color: rgb(41, 206, 66);
 }
