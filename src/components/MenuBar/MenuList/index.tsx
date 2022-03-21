@@ -1,10 +1,10 @@
 import React from "react";
 import "./index.css";
 
-function MenuList() {
+const MenuList: React.FC = () => {
   return (
     <div className="menu-list">
-      <span>Finder</span>
+      <span>Profile</span>
       <span>File</span>
       <span>Edit</span>
       <span>View</span>
@@ -13,6 +13,6 @@ function MenuList() {
       <span>Help</span>
     </div>
   );
-}
+};
 
 export default MenuList;

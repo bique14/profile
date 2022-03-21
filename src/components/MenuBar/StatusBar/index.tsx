@@ -5,7 +5,7 @@ import useDate from "../../../hooks/useDate";
 import Siri from "../../../images/siri.webp";
 import { Battery, Docker, Magnify, Wifi, Volume } from "../../../svg";
 
-const StatusBar = () => {
+const StatusBar: React.FC = () => {
   const { date } = useDate();
 
   return (
@@ -31,6 +31,7 @@ const StatusBar = () => {
       <div className="siri-container">
         <img id="siri" src={Siri} alt="siri-logo" />
       </div>
+      <span>Peerasorn Hemsart</span>
       <div className="notification-bar">
         <div className="noti-row">
           <span></span>

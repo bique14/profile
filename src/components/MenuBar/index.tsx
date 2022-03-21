@@ -5,7 +5,7 @@ import { Apple } from "../../svg";
 import MenuList from "./MenuList";
 import StatusBar from "./StatusBar";
 
-function MenuBar() {
+const MenuBar: React.FC = () => {
   return (
     <div className="menubar">
       <div>
@@ -17,6 +17,6 @@ function MenuBar() {
       </div>
     </div>
   );
-}
+};
 
 export default MenuBar;

@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
 import MenuBar from "./components/MenuBar";
+import Terminal from "./components/Terminal";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
+    <>
       <MenuBar />
-    </div>
+      <Terminal />
+    </>
   );
-}
+};
 
 export default App;
