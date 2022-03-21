@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css";
 
+import useDate from "../../../hooks/useDate";
 import Siri from "../../../images/siri.webp";
 import { Battery, Docker, Magnify, Wifi, Volume } from "../../../svg";
 
 const StatusBar = () => {
+  const { date } = useDate();
+
   return (
     <div className="status-bar">
       <div className="docker">
@@ -21,7 +24,7 @@ const StatusBar = () => {
         <Battery />
       </div>
       <span className="language">A</span>
-      <span id="date">Date</span>
+      <span id="date">{date}</span>
       <div className="magnify">
         <Magnify />
       </div>
