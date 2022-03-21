@@ -1,5 +1,3 @@
-import React from "react";
-
 const Apple = () => (
   <svg width="16" height="16" viewBox="0 0 496.255 608.728">
     <path
