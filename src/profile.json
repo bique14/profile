@@ -1,0 +1,30 @@
+{
+  "name": "Peerasorn Hemsart",
+  "role": "Frontend Developer",
+  "description": "passionate about frontend development",
+  "stack": [
+    "Javascript",
+    "Typescript",
+    "React",
+    "Redux",
+    "Redux-Saga",
+    "CSS",
+    "Tailwind",
+    "MaterialUI",
+    "Elm",
+    "Python",
+    "SQL",
+    "NoSQL"
+  ],
+  "tools": [
+    "Git",
+    "Git Flow",
+    "Git Hook",
+    "Docker",
+    "Heroku",
+    "Netlify",
+    "Firebase",
+    "Storybook"
+  ],
+  "github": "https://github.com/bique14"
+}

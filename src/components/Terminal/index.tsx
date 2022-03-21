@@ -9,7 +9,13 @@ const Terminal: React.FC = () => {
         <div className="terminal-yellow-button"></div>
         <div className="terminal-green-button"></div>
       </div>
-      <div>Peerasorn hemsart</div>
+      <div className="terminal-body">
+        <div className="terminal-prompt">
+          <span className="terminal-prompt-text">~/Peerasorn/Profile</span>
+          <div className="triangle-prompt"></div>
+          <span className="terminal-command">cat ./profile</span>
+        </div>
+      </div>
     </div>
   );
 };

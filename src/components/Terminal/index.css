@@ -21,14 +21,49 @@
   width: 12px;
   height: 12px;
   border-radius: 999px;
+  cursor: pointer;
 }
 
 .terminal-red-button {
   background: rgb(255, 98, 90);
 }
+
 .terminal-yellow-button {
   background: rgb(255, 193, 46);
 }
+
 .terminal-green-button {
   background: rgb(41, 206, 66);
+}
+
+.terminal-body {
+  margin: 0.5rem 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.terminal-prompt {
+  font-weight: bold;
+  width: fit-content;
+  color: black;
+  display: flex;
+}
+
+.terminal-prompt-text {
+  padding: 0 0.5rem;
+  font-size: 14px;
+  letter-spacing: 0.0125cm;
+  background: rgb(255, 175, 215);
+  padding-top: 2px;
+}
+
+.triangle-prompt {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgb(255, 175, 215);
+}
+
+.terminal-command {
+  color: white;
+  font-weight: 100;
+  margin: 0 0.5rem;
 }
