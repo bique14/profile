@@ -1,7 +1,7 @@
 import React from "react";
-import "./status-bar.css";
+import "./index.css";
 
-import Siri from "../../images/siri.webp";
+import Siri from "../../../images/siri.webp";
 
 const StatusBar = () => {
   return (

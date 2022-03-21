@@ -1,5 +1,5 @@
 import React from "react";
-import "./menu-list.css";
+import "./index.css";
 
 function MenuList() {
   return (
