@@ -1,0 +1,95 @@
+.status-bar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.docker {
+  display: flex;
+}
+
+.wifi {
+  display: flex;
+}
+
+.volume {
+  display: flex;
+}
+
+.battery {
+  display: flex;
+  align-self: end;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.language {
+  background: white;
+  color: rgba(71, 71, 74);
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 12px;
+  padding: 0.125rem 0.25rem;
+}
+
+.magnify {
+  margin-bottom: -0.25rem;
+}
+
+.siri-container {
+  display: flex;
+  width: 20px;
+}
+
+.siri-container > img {
+  width: 100%;
+}
+
+.notification-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  align-self: center;
+}
+
+.noti-row,
+.noti-row-odd {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.noti-row > span:nth-child(1),
+.noti-row-odd > span:nth-child(1) {
+  display: block;
+  background: white;
+  width: 2px;
+  height: 2px;
+}
+
+.noti-row > span:nth-child(2) {
+  display: block;
+  background: white;
+  width: 12px;
+  height: 2px;
+}
+
+.noti-row-odd > span:nth-child(2) {
+  display: block;
+  background: white;
+  width: 8px;
+  height: 2px;
+}
+
+.terminal {
+  background: rgb(40, 44, 52);
+  color: white;
+  border-radius: 4px;
+  margin: auto;
+  width: 50%;
+}
+
+@media (max-width: 640px) {
+  .status-bar {
+    display: none;
+  }
+}
