@@ -4,4 +4,31 @@
   border-radius: 4px;
   margin: auto;
   width: 50%;
+  padding: 0 0.5rem;
+}
+
+.terminal-header {
+  width: 100%;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-header > .terminal-red-button,
+.terminal-header > .terminal-yellow-button,
+.terminal-header > .terminal-green-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.terminal-red-button {
+  background: rgb(255, 98, 90);
+}
+.terminal-yellow-button {
+  background: rgb(255, 193, 46);
+}
+.terminal-green-button {
+  background: rgb(41, 206, 66);
 }
