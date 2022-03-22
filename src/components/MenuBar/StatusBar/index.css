@@ -94,7 +94,8 @@
   width: 50%;
 }
 
-@media (max-width: 640px) {
+/* Tablet size */
+@media (max-width: 1024px) {
   .status-bar {
     display: none;
   }

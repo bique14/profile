@@ -1,0 +1,52 @@
+.name-text {
+  font-size: 2.5rem;
+}
+
+.role-text {
+  font-weight: 100;
+}
+
+.stack-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tools-container {
+  display: flex;
+}
+
+.stack-container,
+.tools-container {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+hr {
+  border: none;
+  height: 0.5px;
+  background-color: white;
+  width: 80%;
+  margin: 1.5rem auto;
+}
+
+.github {
+  font-weight: bold;
+}
+
+.github:visited {
+  color: white;
+}
+
+.github:hover {
+  color: rgb(41, 206, 66);
+}
+
+@media (max-width: 640px) {
+  .name-text {
+    font-size: 1.75rem;
+  }
+}

@@ -1,10 +1,16 @@
 import React from "react";
 import "./index.css";
 
+import Profile from "./Profile";
+
 import profile from "../../profile.json";
-console.log(profile);
+import useCommand from "../../hooks/useCommand";
+
+const DIRECTORY = "~/Peerasorn/Profile";
 
 const Terminal: React.FC = () => {
+  const { command, isEnd } = useCommand(200);
+
   return (
     <div className="terminal">
       <div className="terminal-header">
@@ -14,33 +20,15 @@ const Terminal: React.FC = () => {
       </div>
       <div className="terminal-body">
         <div className="terminal-prompt">
-          <span className="terminal-prompt-text">~/Peerasorn/Profile</span>
+          <span className="terminal-directory-text">{DIRECTORY}</span>
           <div className="triangle-prompt"></div>
-          <span className="terminal-command">node profile.js</span>
+          <span className="terminal-command typewriter">{command}</span>
         </div>
-        <div className="terminal-output">
-          <h1 className="name-text">{profile.name}</h1>
-          <h3 className="role-text">{profile.role}</h3>
-          <div className="stack-container">
-            {profile.stacks.map((stack, i) => (
-              <span className="stack-text">
-                {stack}
-                {i !== profile.stacks.length - 1 && ","}
-              </span>
-            ))}
-          </div>
-          <hr />
-          <div className="tools-container">
-            {profile.tools.map((tool, i) => (
-              <span className="tool-text">
-                {tool}
-                {i !== profile.tools.length - 1 && ","}
-              </span>
-            ))}
-          </div>
-          <a href="https://github.com/bique14" className="github">
-            https://github.com/bique14
-          </a>
+        <div
+          className="terminal-output"
+          style={{ visibility: isEnd ? "visible" : "hidden" }}
+        >
+          <Profile profile={profile} />
         </div>
       </div>
     </div>
