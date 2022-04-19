@@ -1,7 +1,6 @@
 import React from "react";
 
 import Screen from "./components/Screen";
-import Application from "./components/Application";
 import MenuBar from "./components/MenuBar";
 import Terminal from "./components/Terminal";
 
@@ -12,9 +11,7 @@ const App: React.FC = () => {
     <>
       <MenuBar />
       <Screen>
-        <Application>
-          <Terminal />
-        </Application>
+        <Terminal />
       </Screen>
     </>
   );
