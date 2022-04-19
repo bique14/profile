@@ -22,13 +22,15 @@ const Profile = (props: Props) => {
       <h3 className="role-text">{profile.role}</h3>
       <div className="stack-container">
         {profile.stacks.map((stack, i) => (
-          <span className="stack-text">{stack}</span>
+          <span key={i} className="stack-text">
+            {stack}
+          </span>
         ))}
       </div>
       <hr />
       <div className="tools-container">
         {profile.tools.map((tool, i) => (
-          <span className="tool-text">
+          <span key={i} className="tool-text">
             {tool}
             {i !== profile.tools.length - 1 && ","}
           </span>
