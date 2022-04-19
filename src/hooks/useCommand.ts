@@ -17,7 +17,7 @@ const useCommand = (speed: number = 100) => {
       }
     };
 
-    typeWriter();
+    setTimeout(() => typeWriter(), 500);
   }, []);
 
   return { command, isEnd };
