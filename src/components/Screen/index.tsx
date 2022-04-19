@@ -1,5 +1,5 @@
 type ScreenProps = {
-  children: JSX.Element;
+  children: JSX.Element | JSX.Element[];
 };
 
 const Screen = (props: ScreenProps) => {
