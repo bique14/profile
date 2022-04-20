@@ -8,7 +8,6 @@ const useDrag = () => {
 
   useEffect(() => {
     if (ref) {
-      console.log(ref);
       dragProps.current = ref;
       elemRef.current = ref;
     }
