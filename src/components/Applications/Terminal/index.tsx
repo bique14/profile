@@ -1,17 +1,13 @@
 import Icons from "../../../icons";
+import AppStyle from "../app.style";
 
 const Terminal = () => {
   return (
     <>
-      <div className="w-10 h-10">
+      <AppStyle.AppIcon>
         <Icons.Terminal />
-      </div>
-      <span
-        className="text-sm text-white overflow-hidden text-ellipsis w-full text-center"
-        style={{ textShadow: "0px 0px 3px black" }}
-      >
-        iTerm2
-      </span>
+      </AppStyle.AppIcon>
+      <AppStyle.AppName>iTerm2</AppStyle.AppName>
     </>
   );
 };
