@@ -4,11 +4,12 @@ import Profile from "./Profile";
 import profileData from "../../profile.json";
 import useCommand from "../../hooks/useCommand";
 import useDrag from "../../hooks/useDrag";
+import ApplicationHeaderControl from "../ApplicationHeaderControl";
 
 import "./index.css";
 
 const DIRECTORY = "~/Peerasorn/Profile";
-const APP_NAME = "terminal";
+const APP_SLUG = "terminal";
 
 interface TerminalProps {
   onClose: (appType: AppType) => void;
@@ -21,13 +22,15 @@ const Terminal = (props: TerminalProps) => {
 
   return (
     <div className="terminal absolute z-10 top-1/4 left-1/4" ref={setRef}>
-      <div className="terminal-header" onMouseDown={initialiseDrag}>
-        <div
-          className="terminal-red-button"
-          onClick={() => onClose(APP_NAME)}
-        ></div>
-        <div className="terminal-yellow-button"></div>
-        <div className="terminal-green-button"></div>
+      <div
+        className="flex px-2 h-5"
+        style={{
+          background: "rgb(40, 44, 52)",
+          borderRadius: "4px 4px 0 0",
+        }}
+        onMouseDown={initialiseDrag}
+      >
+        <ApplicationHeaderControl appSlug={APP_SLUG} onClose={onClose} />
       </div>
       <div className="terminal-body">
         <div className="terminal-prompt">
