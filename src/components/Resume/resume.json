@@ -1,0 +1,258 @@
+{
+  "name": "Peerasorn Hemsart",
+  "position": "Frontend Developer",
+  "employmentHistory": [
+    {
+      "company": "SCG",
+      "location": "Bangkok",
+      "position": "Frontend Developer",
+      "duration": {
+        "start": "Sep 2021",
+        "end": "Present"
+      },
+      "projects": [
+        {
+          "name": "E-Commerce Website",
+          "link": "https://www.doozyonline.com/",
+          "description": "An e-commerce website for selling products about packaging of SCG.",
+          "stacks": "ReactJS, Material UI, Styled Component, Magento, GraphQL, Git Hook"
+        }
+      ]
+    },
+    {
+      "company": "REFINITIV, LSEG",
+      "location": "Bangkok",
+      "position": "Software Engineer",
+      "duration": {
+        "start": "Apr 2021",
+        "end": "Aug 2021"
+      },
+      "projects": [
+        {
+          "name": "Desktop framework streaming",
+          "link": null,
+          "description": "Library for Refinitiv Desktop framework, desktop financial tool for streaming financial data, news, analytics in real-time.",
+          "stacks": "Typescript, Electron"
+        }
+      ]
+    },
+    {
+      "company": "BIGGEST FAN PRODUCTIONS CO., LTD",
+      "location": "Bangkok",
+      "position": "Frontend Developer",
+      "duration": {
+        "start": "Jul 2020",
+        "end": "Mar 2021"
+      },
+      "projects": [
+        {
+          "name": "E-Commerce Website",
+          "link": "https://leelaella.com/",
+          "description": "A website for selling women products and selling products during the online events. Support selling those products with the CMS for admins.",
+          "stacks": "Typescript, Elm, TailwindCSS, Firebase, GraphQL"
+        },
+        {
+          "name": "Ticket Sales System",
+          "link": "https://events.biggestfan.live/",
+          "description": "Biggest Fan Production main product is a live streaming platform for online events and concerts. The ticker system that sells tickets for events on the streaming platform.",
+          "stacks": "Typescript, Elm, TailwindCSS, Python, PostgresQL"
+        },
+        {
+          "name": "Biggest Fan Live Streaming",
+          "link": null,
+          "description": "Biggest Fan Production main product for live streaming and interactive for online events and concerts.",
+          "stacks": "Typescript, Elm, RxJS, TailwindCSS"
+        }
+      ]
+    },
+    {
+      "company": "HotNow CO., LTD",
+      "location": "Bangkok",
+      "position": "Frontend Developer, UI Developer",
+      "duration": {
+        "start": "Jul 2019",
+        "end": "Jun 2020"
+      },
+      "projects": [
+        {
+          "name": "HotNow Application",
+          "link": "https://apps.apple.com/th/app/hotnow/id868760822",
+          "description": "A retail application using HOT token and The1 point as the currencies for purchasing coupons.",
+          "stacks": "Javascript, Elm, TailwindCSS, Storybook, Python, PostgresQL, Docker"
+        },
+        {
+          "name": "Internal Demographics Service",
+          "link": null,
+          "description": "An internal website for data analytic to serve advertisements to users in other games.",
+          "stacks": "ReactJS, Redux, Redux-Saga, FlowJS, Storybook"
+        }
+      ]
+    }
+  ],
+  "internship": {
+    "company": "PROTEUS TECHNOLOGIES",
+    "location": "Bangkok",
+    "position": "FullStack Developer",
+    "duration": {
+      "start": "May 2018",
+      "end": "Sep 2018"
+    },
+    "project": {
+      "name": "HotNow In Play",
+      "description": "An internal website for data analytic to serve advertisements to users in other games.",
+      "stacks": "ReactJS, Redux, Redux-Saga, FlowJS, Storybook"
+    }
+  },
+  "programmingExperienced": {
+    "language": [
+      "Javascript",
+      "Typescript",
+      "React",
+      "Redux",
+      "Redux-Saga",
+      "CSS",
+      "Tailwind",
+      "MaterialUI",
+      "Elm",
+      "Python"
+    ],
+    "tools": [
+      "Git",
+      "Git Flow",
+      "Git Hook",
+      "Docker",
+      "Heroku",
+      "Netlify",
+      "Firebase",
+      "Storybook"
+    ]
+  },
+  "educations": [
+    {
+      "instituation": "Thammasat University",
+      "degree": "Bachelor's Degree",
+      "major": "Computer Science",
+      "duration": {
+        "start": "2015",
+        "end": "2019"
+      }
+    },
+    {
+      "instituation": "Triamudomsuksa Pattanakarn School",
+      "degree": "High school diploma",
+      "major": "Math and English Major",
+      "duration": {
+        "start": "2008",
+        "end": "2014"
+      }
+    }
+  ],
+  "playgrounds": [
+    {
+      "name": "AP Finger Stacking Challenge",
+      "link": "https://apfingerstacking.com/",
+      "date": "Apr 2022",
+      "description": "A game for promoting the Fast & Feel Love the movie.",
+      "stacks": "ReactJS, Typescript, TailwindCSS"
+    },
+    {
+      "name": "TH-Wordle (contribute)",
+      "link": "https://thwordle.vercel.app/",
+      "date": "Feb 2022",
+      "description": "Dark theme for Wordle in Thai language.",
+      "stacks": "TailwindCSS, Typescript, Svelte"
+    },
+    {
+      "name": "usePassword",
+      "link": "https://www.npmjs.com/package/react-use-password",
+      "date": "Nov 2021",
+      "description": "Library React Hook for show/hide password.",
+      "stacks": "ReactJS"
+    },
+    {
+      "name": "Git Hook Branch Name",
+      "link": null,
+      "date": "Nov 2021",
+      "description": "Git hook for creating a branch name in each commit message.",
+      "stacks": "Bash"
+    },
+    {
+      "name": "Spotify",
+      "link": "https://spotify-fake-lyric.netlify.app/",
+      "date": "Jan 2021",
+      "description": "Website for practicing my CSS skill by imitating Spotify design.",
+      "stacks": "Javascript, TailwindCSS"
+    },
+    {
+      "name": "Text on Image",
+      "link": "https://rakchart.netlify.app/",
+      "date": "Sep 2020",
+      "description": "Web application for writing a text into an image and being able to download.",
+      "stacks": "ReactJS"
+    },
+    {
+      "name": "Elm Generator",
+      "link": null,
+      "date": "Jun 2020",
+      "description": "Generator tool for initializing an Elm language.",
+      "stacks": "Yeoman"
+    },
+    {
+      "name": "Novel Chat",
+      "link": "https://wenrene.netlify.app/",
+      "date": "May 2020",
+      "description": "Website for practicing my CSS skill by imitating Joylada design.",
+      "stacks": "Elm, Javascript, TailwindCSS"
+    },
+    {
+      "name": "Covid Care",
+      "link": null,
+      "date": "Apr 2020",
+      "description": "Form filling website for mental care during Covid19 situation for Thammasat Hospital.",
+      "stacks": "Elm, Javascript, TailwindCSS"
+    },
+    {
+      "name": "True4U website admin.",
+      "link": "https://true4u.com/",
+      "date": "Mar 2020 - May 2020",
+      "description": "Worked on some pages of the True4u admin website on the frontend part.",
+      "stacks": "Elm, Javascript, TailwindCSS"
+    },
+    {
+      "name": "Vet Buddy Expert",
+      "link": "https://www.vetbuddyexpert.com/",
+      "date": "Jan 2020 - Feb 2020",
+      "description": "Worked on some pages using Elm and Firebase.",
+      "stacks": "Elm, Javascript, TailwindCSS, Firebase"
+    },
+    {
+      "name": "Dark Messenger (Deprecated)",
+      "link": null,
+      "date": "Jun 2019",
+      "description": "External application for Facebook messenger with dark theme.",
+      "stacks": "Electron, CSS"
+    },
+    {
+      "name": "Redux Generator (Contribute)",
+      "link": null,
+      "date": "Apr 2019",
+      "description": "Generator tool for creating Redux files.",
+      "stacks": "Yeoman"
+    },
+    {
+      "name": "Keynote Presentation Remote",
+      "link": "https://github.com/bique14/Keydroid",
+      "date": "Nov 2018",
+      "description": "Using mobile device as a presentation remote on Keynote for MacOS",
+      "stacks": "Javascript, NodeJS, Socket.io"
+    },
+    {
+      "name": "Dog play the piano",
+      "link": "https://bique14.github.io/dog-play-the-piano/src/index.html",
+      "date": "Oct 2018",
+      "description": "Free time project for make a piano keyboard",
+      "stacks": "Javascript"
+    }
+  ],
+  "github": "https://github.com/bique14"
+}
