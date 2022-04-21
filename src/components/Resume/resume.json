@@ -1,9 +1,10 @@
 {
   "name": "Peerasorn Hemsart",
+  "nickname": "Big",
   "position": "Frontend Developer",
-  "employmentHistory": [
+  "companies": [
     {
-      "company": "SCG",
+      "name": "SCG",
       "location": "Bangkok",
       "position": "Frontend Developer",
       "duration": {
@@ -20,7 +21,7 @@
       ]
     },
     {
-      "company": "REFINITIV, LSEG",
+      "name": "REFINITIV, LSEG",
       "location": "Bangkok",
       "position": "Software Engineer",
       "duration": {
@@ -37,7 +38,7 @@
       ]
     },
     {
-      "company": "BIGGEST FAN PRODUCTIONS CO., LTD",
+      "name": "BIGGEST FAN PRODUCTIONS CO., LTD",
       "location": "Bangkok",
       "position": "Frontend Developer",
       "duration": {
@@ -66,7 +67,7 @@
       ]
     },
     {
-      "company": "HotNow CO., LTD",
+      "name": "HotNow CO., LTD",
       "location": "Bangkok",
       "position": "Frontend Developer, UI Developer",
       "duration": {
@@ -103,8 +104,8 @@
       "stacks": "ReactJS, Redux, Redux-Saga, FlowJS, Storybook"
     }
   },
-  "programmingExperienced": {
-    "language": [
+  "skill": {
+    "languages": [
       "Javascript",
       "Typescript",
       "React",
@@ -129,7 +130,7 @@
   },
   "educations": [
     {
-      "instituation": "Thammasat University",
+      "institution": "Thammasat University",
       "degree": "Bachelor's Degree",
       "major": "Computer Science",
       "duration": {
@@ -138,7 +139,7 @@
       }
     },
     {
-      "instituation": "Triamudomsuksa Pattanakarn School",
+      "institution": "Triamudomsuksa Pattanakarn School",
       "degree": "High school diploma",
       "major": "Math and English Major",
       "duration": {
