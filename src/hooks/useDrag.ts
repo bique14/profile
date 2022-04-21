@@ -37,9 +37,13 @@ const useDrag = () => {
     // }px)`;
 
     const xAxis =
-      dragProps.current.dragStartLeft + clientX - dragProps.current.dragStartX;
+      dragProps.current.dragStartLeft +
+      clientX -
+      (dragProps.current.dragStartX - 50);
     const yAxis =
-      dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY;
+      dragProps.current.dragStartTop +
+      clientY -
+      (dragProps.current.dragStartY + 20);
 
     elemRef.current.style.left = `${xAxis}px`;
 
