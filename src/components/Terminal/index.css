@@ -7,7 +7,7 @@
   background: rgba(40, 44, 52, 0.9);
 }
 
-.terminal-header {
+/* .terminal-header {
   background: rgb(40, 44, 52);
   height: 1.25rem;
   border-radius: 4px;
@@ -36,7 +36,7 @@
 
 .terminal-green-button {
   background: rgb(41, 206, 66);
-}
+} */
 
 .terminal-body {
   padding: 0.5rem 0.5rem 2.5rem;
