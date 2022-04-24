@@ -60,7 +60,7 @@ const Resume = (props: ResumeProps) => {
           Peerasorn Hemsart - resume
         </div>
       </div>
-      <div className="flex justify-between px-2 mb-1 h-6">
+      <div className="flex justify-between px-2 mb-2 h-6">
         <div className="flex gap-1">
           <div
             className="bg-white px-2 flex items-center h-full rounded text-sm text-gray-400 cursor-pointer"
@@ -118,6 +118,29 @@ const Resume = (props: ResumeProps) => {
 
             <div className="mt-4 border-b-2 pb-4">
               <Educations />
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="paper-3"
+          className="bg-white h-fit shadow-md flex flex-col px-4 py-10"
+        >
+          <div className="mt-4">
+            <div className="pb-4">
+              <Playgrounds />
+            </div>
+
+            <div className="mt-4 border-b-2 pb-4">
+              <span className="text-sm">
+                See more on github -{" "}
+                <a
+                  className="underline text-blue-700"
+                  href="https://github.com/bique14"
+                >
+                  https://github.com/bique14
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -236,12 +259,44 @@ const Educations = () => {
       <span className="font-bold">EDUCATION</span>
       <div className="flex flex-col gap-2 text-sm mt-2">
         {educations.map((education) => (
-          <div className="flex flex-col">
+          <div key={education.institution} className="flex flex-col">
             <span>
               {education.degree}, {education.institution} - {education.major}
             </span>
             <span className="text-xs text-gray-500">
               {education.duration.start} - {education.duration.end}
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+const Playgrounds = () => {
+  const { playgrounds } = RESUME;
+
+  return (
+    <>
+      <span className="font-bold">MY PROJECTS</span>
+      <div className="flex flex-col gap-2 text-sm mt-2">
+        {playgrounds.map((playground) => (
+          <div key={playground.name} className="flex flex-col">
+            <span className="font-bold">{playground.name}</span>
+            {playground.link && (
+              <a
+                className="underline text-blue-700"
+                href={playground.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {playground.link}
+              </a>
+            )}
+            <span className="text-xs text-gray-500">{playground.date}</span>
+            <span>{playground.description}</span>
+            <span className="text-xs text-gray-400">
+              STACKS : {playground.stacks}
             </span>
           </div>
         ))}
