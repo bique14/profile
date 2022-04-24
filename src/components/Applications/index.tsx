@@ -16,15 +16,23 @@ const Applications = (props: ApplicationsProps) => {
   const { onOpen } = props;
 
   return (
-    <div className="w-full h-full relative">
+    <div
+      className="w-full h-full relative grid p-4"
+      // style={{
+      //   gridTemplateColumns: "repeat(14, minmax(0, 1fr))",
+      //   gridTemplateRows: "repeat(8, minmax(0, 1fr))",
+      // }}
+    >
       <AppWrapper
+        // classes=""
         classes="right-4 top-4"
         onOpen={() => onOpen(ApplicationsType.resume)}
       >
         <Resume />
       </AppWrapper>
       <AppWrapper
-        classes="right-20 top-4"
+        // classes=""
+        classes="right-24 top-4"
         onOpen={() => onOpen(ApplicationsType.terminal)}
       >
         <Terminal />
