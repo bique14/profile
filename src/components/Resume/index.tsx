@@ -45,7 +45,7 @@ const Resume = (props: ResumeProps) => {
 
   return (
     <div
-      className="w-1/2 h-4/5 bg-[rgb(234,234,234)] rounded-[4px] absolute z-10"
+      className="w-1/2 h-4/5 bg-[rgb(234,234,234)] rounded-[4px] absolute z-10 top-[10%] left-[20%]"
       ref={setRef}
     >
       <div

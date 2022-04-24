@@ -21,7 +21,7 @@ const Terminal = (props: TerminalProps) => {
   const { command, isEnd } = useCommand(200);
 
   return (
-    <div className="terminal absolute z-10 top-1/4 left-1/4" ref={setRef}>
+    <div className="terminal absolute z-10 top-[20%] left-[40%]" ref={setRef}>
       <div
         className="flex px-2 h-5"
         style={{
