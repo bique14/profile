@@ -150,7 +150,7 @@
   ],
   "playgrounds": [
     {
-      "name": "AP Finger Stacking Challenge",
+      "name": "🥤 AP Finger Stacking Challenge",
       "link": "https://apfingerstacking.com/",
       "date": "Apr 2022",
       "description": "A game for promoting the Fast & Feel Love the movie.",
@@ -199,7 +199,7 @@
       "stacks": "Yeoman"
     },
     {
-      "name": "Novel Chat",
+      "name": "📚 Novel Chat",
       "link": "https://wenrene.netlify.app/",
       "date": "May 2020",
       "description": "Website for practicing my CSS skill by imitating Joylada design.",
@@ -241,7 +241,7 @@
       "stacks": "Yeoman"
     },
     {
-      "name": "Keynote Presentation Remote",
+      "name": "📱 Keynote Presentation Remote",
       "link": "https://github.com/bique14/Keydroid",
       "date": "Nov 2018",
       "description": "Using mobile device as a presentation remote on Keynote for MacOS",
