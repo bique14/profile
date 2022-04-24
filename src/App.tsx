@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Loading from "./components/Loading";
 import Screen from "./components/Screen";
@@ -12,14 +12,28 @@ import useLoading from "./hooks/useLoading";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
+import Login from "./components/Login";
 
 export type AppType = "resume" | "terminal";
+
+const STATE = Object.freeze({
+  LOADING: "LOADING",
+  LOGIN: "LOGIN",
+  SCREEN: "SCREEN",
+});
 
 const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
+  const [state, setState] = useState<string>(STATE.LOADING);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
+
+  useEffect(() => console.log(state), [state]);
+
+  const onLogin = () => {
+    setTimeout(() => setState(STATE.SCREEN), 1000);
+  };
 
   const onOpen = (appType: AppType) => {
     const updatedOpenApp: AppType[] = appOpened.includes(appType)
@@ -52,26 +66,40 @@ const App: React.FC = () => {
     });
   };
 
-  return (
-    <>
-      {isDesktop && (
-        <>
-          {isLoading && <Loading percent={percent} />}
-          {!isLoading && (
-            <>
-              <MenuBar />
-              <Screen>
-                <>{renderAppOpened()}</>
+  useEffect(() => {
+    if (!isLoading && state === STATE.LOADING) {
+      setTimeout(() => setState(STATE.LOGIN), 400);
+    }
+  }, [isLoading]);
 
-                <Applications onOpen={onOpen} />
-              </Screen>
-            </>
-          )}
-        </>
-      )}
-      {!isDesktop && <Mobile />}
-    </>
-  );
+  const renderFromState = (state: string) => {
+    switch (state) {
+      case STATE.LOADING:
+        return <Loading percent={percent} />;
+      case STATE.LOGIN:
+        return <Login onLogin={onLogin} />;
+      case STATE.SCREEN:
+        return (
+          <>
+            {isDesktop && (
+              <>
+                <MenuBar />
+                <Screen>
+                  <>{renderAppOpened()}</>
+
+                  <Applications onOpen={onOpen} />
+                </Screen>
+              </>
+            )}
+            {!isDesktop && <Mobile />}
+          </>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return renderFromState(state);
 };
 
 export default App;
