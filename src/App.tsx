@@ -32,7 +32,10 @@ const App: React.FC = () => {
   useEffect(() => console.log(state), [state]);
 
   const onLogin = () => {
-    setTimeout(() => setState(STATE.SCREEN), 1000);
+    if (isDesktop) document.documentElement.requestFullscreen();
+    setTimeout(() => {
+      setState(STATE.SCREEN);
+    }, 1000);
   };
 
   const onOpen = (appType: AppType) => {
