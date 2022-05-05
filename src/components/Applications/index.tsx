@@ -7,6 +7,11 @@ import Spotify, { SpotifyDock } from "./Spotify";
 import { NoteDock } from "./Note";
 
 import "./index.css";
+import { ChromeDock } from "./Chrome";
+import { TelegramDock } from "./Telegram";
+import { AppStoreDock } from "./AppStore";
+import { VSCodeDock } from "./VSCode";
+import { FinderDock } from "./Finder";
 
 interface ApplicationsProps {
   onOpen: (appType: AppType) => void;
@@ -23,14 +28,24 @@ const Applications = (props: ApplicationsProps) => {
 
   const dockApps = [
     {
-      name: "Terminal",
-      type: ApplicationsType.terminal,
-      component: TerminalDock,
+      name: "Finder",
+      type: null,
+      component: FinderDock,
     },
     {
-      name: "Resume",
-      type: ApplicationsType.resume,
-      component: ResumeDock,
+      name: "AppStore",
+      type: null,
+      component: AppStoreDock,
+    },
+    {
+      name: "Chrome",
+      type: null,
+      component: ChromeDock,
+    },
+    {
+      name: "Note",
+      type: null,
+      component: NoteDock,
     },
     {
       name: "Spotify",
@@ -38,9 +53,24 @@ const Applications = (props: ApplicationsProps) => {
       component: SpotifyDock,
     },
     {
-      name: "Note",
+      name: "Telegram",
       type: null,
-      component: NoteDock,
+      component: TelegramDock,
+    },
+    {
+      name: "Terminal",
+      type: ApplicationsType.terminal,
+      component: TerminalDock,
+    },
+    {
+      name: "VSCode",
+      type: null,
+      component: VSCodeDock,
+    },
+    {
+      name: "Resume",
+      type: ApplicationsType.resume,
+      component: ResumeDock,
     },
   ];
 
