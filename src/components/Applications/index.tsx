@@ -1,7 +1,12 @@
 import type { AppType } from "../../App";
+import Dock from "../Dock";
 
-import Resume from "./Resume";
-import Terminal from "./Terminal";
+import Resume, { ResumeDock } from "./Resume";
+import Terminal, { TerminalDock } from "./Terminal";
+import Spotify, { SpotifyDock } from "./Spotify";
+import { NoteDock } from "./Note";
+
+import "./index.css";
 
 interface ApplicationsProps {
   onOpen: (appType: AppType) => void;
@@ -10,6 +15,7 @@ interface ApplicationsProps {
 const ApplicationsType = Object.freeze({
   resume: "resume" as const,
   terminal: "terminal" as const,
+  spotify: "spotify" as const,
 });
 
 const Applications = (props: ApplicationsProps) => {
@@ -24,19 +30,46 @@ const Applications = (props: ApplicationsProps) => {
       // }}
     >
       <AppWrapper
-        // classes=""
         classes="right-4 top-4"
         onOpen={() => onOpen(ApplicationsType.resume)}
       >
         <Resume />
       </AppWrapper>
       <AppWrapper
-        // classes=""
         classes="right-24 top-4"
         onOpen={() => onOpen(ApplicationsType.terminal)}
       >
         <Terminal />
       </AppWrapper>
+
+      <Dock>
+        <DockWrapper
+          appName="Resume"
+          onOpen={() => onOpen(ApplicationsType.resume)}
+        >
+          <ResumeDock />
+        </DockWrapper>
+        <DockWrapper
+          appName="Terminal"
+          onOpen={() => onOpen(ApplicationsType.terminal)}
+        >
+          <TerminalDock />
+        </DockWrapper>
+        <DockWrapper
+          appName="Spotify"
+          onOpen={() => onOpen(ApplicationsType.spotify)}
+        >
+          <SpotifyDock />
+        </DockWrapper>
+        <DockWrapper
+          appName="Note"
+          onOpen={() => {
+            /** COMING SOON */
+          }}
+        >
+          <NoteDock />
+        </DockWrapper>
+      </Dock>
     </div>
   );
 };
@@ -57,6 +90,31 @@ const AppWrapper = (props: AppWrapperProps) => {
       onDoubleClick={onOpen}
     >
       {children}
+    </div>
+  );
+};
+
+interface DockWrapperProps {
+  appName: string;
+  onOpen: () => void;
+  children: JSX.Element;
+}
+
+const DockWrapper = (props: DockWrapperProps) => {
+  const { appName, onOpen, children } = props;
+
+  return (
+    <div className="relative">
+      <div className="dock-app" onClick={onOpen}>
+        {children}
+      </div>
+
+      <span
+        className="dock-app-name"
+        style={{ transform: "translate(-50%, 0)" }}
+      >
+        {appName}
+      </span>
     </div>
   );
 };

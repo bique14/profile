@@ -1,0 +1,20 @@
+.dock-app:hover {
+  transform: scale(1.125);
+  cursor: pointer;
+}
+
+.dock-app-name {
+  display: none;
+}
+
+.dock-app:hover ~ .dock-app-name {
+  display: block;
+  position: absolute;
+  top: -2.75rem;
+  left: 50%;
+  border-radius: 0.25rem;
+  background: rgba(41, 41, 41, 0.8);
+  color: white;
+  text-align: center;
+  padding: 0 0.5rem;
+}
