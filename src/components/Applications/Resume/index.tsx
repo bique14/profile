@@ -12,4 +12,14 @@ const Resume = () => {
   );
 };
 
+export const ResumeDock = () => {
+  return (
+    <>
+      <AppStyle.AppIcon>
+        <Icons.PDF />
+      </AppStyle.AppIcon>
+    </>
+  );
+};
+
 export default Resume;

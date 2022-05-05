@@ -12,4 +12,14 @@ const Terminal = () => {
   );
 };
 
+export const TerminalDock = () => {
+  return (
+    <>
+      <AppStyle.AppIcon>
+        <Icons.Terminal />
+      </AppStyle.AppIcon>
+    </>
+  );
+};
+
 export default Terminal;
