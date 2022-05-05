@@ -21,6 +21,29 @@ const ApplicationsType = Object.freeze({
 const Applications = (props: ApplicationsProps) => {
   const { onOpen } = props;
 
+  const dockApps = [
+    {
+      name: "Terminal",
+      type: ApplicationsType.terminal,
+      component: TerminalDock,
+    },
+    {
+      name: "Resume",
+      type: ApplicationsType.resume,
+      component: ResumeDock,
+    },
+    {
+      name: "Spotify",
+      type: ApplicationsType.spotify,
+      component: SpotifyDock,
+    },
+    {
+      name: "Note",
+      type: null,
+      component: NoteDock,
+    },
+  ];
+
   return (
     <div
       className="w-full h-full relative grid p-4"
@@ -43,32 +66,15 @@ const Applications = (props: ApplicationsProps) => {
       </AppWrapper>
 
       <Dock>
-        <DockWrapper
-          appName="Resume"
-          onOpen={() => onOpen(ApplicationsType.resume)}
-        >
-          <ResumeDock />
-        </DockWrapper>
-        <DockWrapper
-          appName="Terminal"
-          onOpen={() => onOpen(ApplicationsType.terminal)}
-        >
-          <TerminalDock />
-        </DockWrapper>
-        <DockWrapper
-          appName="Spotify"
-          onOpen={() => onOpen(ApplicationsType.spotify)}
-        >
-          <SpotifyDock />
-        </DockWrapper>
-        <DockWrapper
-          appName="Note"
-          onOpen={() => {
-            /** COMING SOON */
-          }}
-        >
-          <NoteDock />
-        </DockWrapper>
+        {dockApps.map((app) => (
+          <DockWrapper
+            key={app.name}
+            appName={app.name}
+            onOpen={() => (app.type ? onOpen(app.type) : {})}
+          >
+            <app.component />
+          </DockWrapper>
+        ))}
       </Dock>
     </div>
   );
