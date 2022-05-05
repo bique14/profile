@@ -27,7 +27,7 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<string>(STATE.LOADING);
+  const [state, setState] = useState<string>(STATE.SCREEN);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   useEffect(() => console.log(state), [state]);
