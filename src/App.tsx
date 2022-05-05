@@ -13,8 +13,9 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
 import Login from "./components/Login";
+import Spotify from "./components/Spotify";
 
-export type AppType = "resume" | "terminal";
+export type AppType = "resume" | "terminal" | "spotify";
 
 const STATE = Object.freeze({
   LOADING: "LOADING",
@@ -63,6 +64,8 @@ const App: React.FC = () => {
           return <Resume key={appType} onClose={onClose} />;
         case "terminal":
           return <Terminal key={appType} onClose={onClose} />;
+        case "spotify":
+          return <Spotify key={appType} onClose={onClose} />;
         default:
           return null;
       }
