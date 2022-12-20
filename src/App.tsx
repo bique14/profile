@@ -17,17 +17,17 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
 
-const STATE = Object.freeze({
-  LOADING: "LOADING",
-  LOGIN: "LOGIN",
-  SCREEN: "SCREEN",
-});
+enum STATE {
+  LOADING = "LOADING",
+  LOGIN = "LOGIN",
+  SCREEN = "SCREEN",
+}
 
 const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<string>(STATE.LOADING);
+  const [state, setState] = useState<string>(STATE.LOGIN);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   useEffect(() => console.log(state), [state]);
