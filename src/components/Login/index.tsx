@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Icons from "../../icons";
 import wallpaper from "../../images/wallpaper.jpeg";
+import Me from "../../images/me.jpeg";
 
 import "./index.css";
 
@@ -30,18 +31,20 @@ const Login = (props: LoginProps) => {
         }}
       ></div>
       <div className="relative h-full w-full flex flex-col justify-center items-center">
-        <div className="bg-gray-400 rounded-full p-8 opacity-80">
-          <div className="w-10">
-            <Icons.Apple />
-          </div>
+        <div className="bg-gray-400 rounded-full w-32 opacity-80">
+          <img alt="profile" src={Me} className="rounded-full" />
         </div>
-        <span className="mt-2 text-white opacity-80">Peerasorn Hemsart</span>
+        <span className="mt-2 text-white opacity-80 cursor-default">
+          Peerasorn Hemsart
+        </span>
         {!isLoading && (
           <button
-            className="mt-5 mb-7 rounded-full border border-gray-400 bg-gray-400 text-lg w-8 p-2 opacity-80"
+            className="mt-5 mb-7 rounded-full border border-gray-400 bg-gray-400 text-lg p-2 opacity-80"
             onClick={_onLogin}
           >
-            <Icons.ChevronRight />
+            <div className="w-4 -mr-[2px]">
+              <Icons.ChevronRight />
+            </div>
           </button>
         )}
         {isLoading && <Spinner />}
