@@ -1,4 +1,4 @@
-import type { AppType } from "../../App";
+import type { AppType } from "../../types";
 
 interface ApplicationHeaderControlProps {
   appSlug: AppType;

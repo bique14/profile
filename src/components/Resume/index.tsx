@@ -1,4 +1,4 @@
-import type { AppType } from "../../App";
+import type { AppType } from "../../types";
 import type { ResumeType } from "./resume.type";
 
 import ApplicationHeaderControl from "../ApplicationHeaderControl";

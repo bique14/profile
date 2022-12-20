@@ -1,3 +1,5 @@
+import type { AppType } from "./types";
+
 import React, { useEffect, useState } from "react";
 
 import Loading from "./components/Loading";
@@ -7,15 +9,13 @@ import Terminal from "./components/Terminal";
 import Resume from "./components/Resume";
 import Applications from "./components/Applications";
 import Mobile from "./components/Mobile";
+import Login from "./components/Login";
+import Spotify from "./components/Spotify";
 
 import useLoading from "./hooks/useLoading";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
-import Login from "./components/Login";
-import Spotify from "./components/Spotify";
-
-export type AppType = "resume" | "terminal" | "spotify";
 
 const STATE = Object.freeze({
   LOADING: "LOADING",

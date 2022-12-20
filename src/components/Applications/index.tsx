@@ -1,4 +1,4 @@
-import type { AppType } from "../../App";
+import type { AppType } from "../../types";
 import Dock from "../Dock";
 
 import Resume, { ResumeDock } from "./Resume";

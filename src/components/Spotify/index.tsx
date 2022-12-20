@@ -1,4 +1,4 @@
-import type { AppType } from "../../App";
+import type { AppType } from "../../types";
 import useDrag from "../../hooks/useDrag";
 import ApplicationHeaderControl from "../ApplicationHeaderControl";
 
