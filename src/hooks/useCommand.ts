@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const useCommand = (speed: number = 100) => {
   const cmd = "node profile.js";
   const [command, setCommand] = useState<string>("");
   const [isEnd, setIsEnd] = useState<boolean>(false);
 
-  let i = 0;
+  const iRef = useRef(0);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+
+  const typeWriter = useCallback(() => {
+    if (iRef.current === cmd.length) setIsEnd(true);
+    if (iRef.current < cmd.length) {
+      setCommand((prev) => prev.concat(cmd.charAt(iRef.current)));
+      iRef.current++;
+      timeoutRef.current = setTimeout(() => typeWriter(), speed);
+    }
+  }, [cmd, speed]);
 
   useEffect(() => {
-    const typeWriter = () => {
-      if (i === cmd.length) setIsEnd(true);
-      if (i < cmd.length) {
-        setCommand((prev) => prev.concat(cmd.charAt(i)));
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    };
-
-    setTimeout(() => typeWriter(), 500);
-  }, []);
+    iRef.current = 0;
+    timeoutRef.current = setTimeout(() => typeWriter(), 500);
+    return () => clearTimeout(timeoutRef.current as NodeJS.Timeout);
+  }, [typeWriter]);
 
   return { command, isEnd };
 };
