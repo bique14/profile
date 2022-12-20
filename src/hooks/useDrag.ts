@@ -35,7 +35,6 @@ const useDrag = () => {
     // }px, ${
     //   dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY
     // }px)`;
-
     const xAxis =
       dragProps.current.dragStartLeft +
       clientX -
@@ -45,10 +44,12 @@ const useDrag = () => {
       clientY -
       (dragProps.current.dragStartY + 20);
 
+    if (yAxis <= 0) {
+      elemRef.current.style.top = "0px";
+    } else {
+      elemRef.current.style.top = `${yAxis}px`;
+    }
     elemRef.current.style.left = `${xAxis}px`;
-
-    if (yAxis <= 0) elemRef.current.style.top = "0px";
-    else elemRef.current.style.top = `${yAxis}px`;
   };
 
   const stopDragging = () => {
