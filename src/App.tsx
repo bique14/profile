@@ -17,6 +17,7 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
 import Spinner from "./components/Spinner";
+import useCached from "./hooks/useCached";
 
 const Applications = lazy(() => import("./components/Applications"));
 
@@ -27,6 +28,7 @@ enum STATE {
 }
 
 const App: React.FC = () => {
+  useCached();
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 

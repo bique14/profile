@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface FinderDockProps {
+  icon: string;
+}
+
 const Finder = () => {
   return (
     <>
@@ -12,11 +16,13 @@ const Finder = () => {
   );
 };
 
-export const FinderDock = () => {
+export const FinderDock = (props: FinderDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
-        <img alt="Finder" src={Icons.Finder} />
+        <img alt="Finder" src={icon} />
       </AppStyle.AppIcon>
     </>
   );

@@ -1,4 +1,6 @@
 import type { AppType } from "../../types";
+import { useEffect, useState } from "react";
+
 import Dock from "../Dock";
 
 import Resume, { ResumeDock } from "./Resume";
@@ -6,12 +8,16 @@ import Terminal, { TerminalDock } from "./Terminal";
 import Spotify, { SpotifyDock } from "./Spotify";
 import { NoteDock } from "./Note";
 
-import "./index.css";
 import { ChromeDock } from "./Chrome";
 import { TelegramDock } from "./Telegram";
 import { AppStoreDock } from "./AppStore";
 import { VSCodeDock } from "./VSCode";
 import { FinderDock } from "./Finder";
+
+import { getCache } from "../../hooks/useCached";
+
+import "./index.css";
+import Icons from "../../icons";
 
 interface ApplicationsProps {
   onOpen: (appType: AppType) => void;
@@ -25,52 +31,78 @@ const ApplicationsType = Object.freeze({
 
 const Applications = (props: ApplicationsProps) => {
   const { onOpen } = props;
+  const [appIcons, setAppIcons] = useState<any>({});
+
+  useEffect(() => {
+    const loadCache = async () => {
+      // appstore
+      // chrome
+      // finder
+      // note
+      // spotify
+      // telegram
+      // vscode
+      const cacheList = {
+        appStore: await getCache(Icons.AppStore),
+        chrome: await getCache(Icons.Chrome),
+        finder: await getCache(Icons.Finder),
+        note: await getCache(Icons.Note),
+        spotify: await getCache(Icons.Spotify),
+        telegram: await getCache(Icons.Telegram),
+        vscode: await getCache(Icons.VSCode),
+      };
+
+      setAppIcons(cacheList);
+    };
+
+    loadCache();
+  }, []);
 
   const dockApps = [
     {
       name: "Finder",
       type: null,
-      component: FinderDock,
+      component: <FinderDock icon={appIcons.finder} />,
     },
     {
       name: "AppStore",
       type: null,
-      component: AppStoreDock,
+      component: <AppStoreDock icon={appIcons.appStore} />,
     },
     {
       name: "Chrome",
       type: null,
-      component: ChromeDock,
+      component: <ChromeDock icon={appIcons.chrome} />,
     },
     {
       name: "Note",
       type: null,
-      component: NoteDock,
+      component: <NoteDock icon={appIcons.note} />,
     },
     {
       name: "Spotify",
       type: ApplicationsType.spotify,
-      component: SpotifyDock,
+      component: <SpotifyDock icon={appIcons.spotify} />,
     },
     {
       name: "Telegram",
       type: null,
-      component: TelegramDock,
+      component: <TelegramDock icon={appIcons.telegram} />,
     },
     {
       name: "Terminal",
       type: ApplicationsType.terminal,
-      component: TerminalDock,
+      component: <TerminalDock />,
     },
     {
       name: "VSCode",
       type: null,
-      component: VSCodeDock,
+      component: <VSCodeDock icon={appIcons.vscode} />,
     },
     {
       name: "Resume",
       type: ApplicationsType.resume,
-      component: ResumeDock,
+      component: <ResumeDock />,
     },
   ];
 
@@ -102,7 +134,7 @@ const Applications = (props: ApplicationsProps) => {
             appName={app.name}
             onOpen={() => (app.type ? onOpen(app.type) : {})}
           >
-            <app.component />
+            {app.component}
           </DockWrapper>
         ))}
       </Dock>

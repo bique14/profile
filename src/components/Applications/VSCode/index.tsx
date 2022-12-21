@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface VSCodeDockProps {
+  icon: string;
+}
+
 const VSCode = () => {
   return (
     <>
@@ -12,12 +16,14 @@ const VSCode = () => {
   );
 };
 
-export const VSCodeDock = () => {
+export const VSCodeDock = (props: VSCodeDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
         <a href="https://vscode.dev/" target="_blank" rel="noreferrer">
-          <img alt="VSCode" src={Icons.VSCode} />
+          <img alt="VSCode" src={icon} />
         </a>
       </AppStyle.AppIcon>
     </>

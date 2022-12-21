@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface AppStoreDockProps {
+  icon: string;
+}
+
 const AppStore = () => {
   return (
     <>
@@ -12,7 +16,9 @@ const AppStore = () => {
   );
 };
 
-export const AppStoreDock = () => {
+export const AppStoreDock = (props: AppStoreDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
@@ -21,7 +27,7 @@ export const AppStoreDock = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <img alt="appStore" src={Icons.AppStore} />
+          <img alt="appStore" src={icon} />
         </a>
       </AppStyle.AppIcon>
     </>

@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface NoteDockProps {
+  icon: string;
+}
+
 const Note = () => {
   return (
     <>
@@ -12,11 +16,13 @@ const Note = () => {
   );
 };
 
-export const NoteDock = () => {
+export const NoteDock = (props: NoteDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
-        <img alt="note" src={Icons.Note} />
+        <img alt="note" src={icon} />
       </AppStyle.AppIcon>
     </>
   );

@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface TelegramDockProps {
+  icon: string;
+}
+
 const Telegram = () => {
   return (
     <>
@@ -12,12 +16,14 @@ const Telegram = () => {
   );
 };
 
-export const TelegramDock = () => {
+export const TelegramDock = (props: TelegramDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
         <a href="https://web.telegram.org/" target="_blank" rel="noreferrer">
-          <img alt="telegram" src={Icons.Telegram} />
+          <img alt="telegram" src={icon} />
         </a>
       </AppStyle.AppIcon>
     </>

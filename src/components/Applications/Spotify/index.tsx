@@ -1,6 +1,10 @@
 import Icons from "../../../icons";
 import AppStyle from "../app.style";
 
+interface SpotifyDockProps {
+  icon: string;
+}
+
 const Spotify = () => {
   return (
     <>
@@ -12,11 +16,13 @@ const Spotify = () => {
   );
 };
 
-export const SpotifyDock = () => {
+export const SpotifyDock = (props: SpotifyDockProps) => {
+  const { icon } = props;
+
   return (
     <>
       <AppStyle.AppIcon>
-        <img alt="spotify" src={Icons.Spotify} />
+        <img alt="spotify" src={icon} />
       </AppStyle.AppIcon>
     </>
   );
