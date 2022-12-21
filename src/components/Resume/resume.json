@@ -4,12 +4,41 @@
   "position": "Frontend Developer",
   "companies": [
     {
+      "name": "BIT Studio, Bangkok - Front-End Developer",
+      "location": "Bangkok",
+      "position": "Frontend Developer",
+      "duration": {
+        "start": "Sep 2022",
+        "end": "Present"
+      },
+      "projects": [
+        {
+          "name": "GTM",
+          "link": null,
+          "description": "A website for capturing a dancing video clip as image sequence for users.",
+          "stacks": "Typescript, Elm, TailwindCSS, Firebase, GraphQL"
+        },
+        {
+          "name": "Flexpress Yourself",
+          "link": "https://flexpressyourself.com/",
+          "description": "A website for promoting Samsung Galaxy Z Flip 4. Able to create clothes from user motions with Three.js and recording video to share to social media.",
+          "stacks": "Typescript, Elm, TailwindCSS, Python, PostgresQL"
+        },
+        {
+          "name": "Google Doc Lens",
+          "link": null,
+          "description": "A website that helps patients identify the handwriting of their doctors to improve reading.",
+          "stacks": "ReactJS, TailwindCSS"
+        }
+      ]
+    },
+    {
       "name": "SCG",
       "location": "Bangkok",
       "position": "Frontend Developer",
       "duration": {
         "start": "Sep 2021",
-        "end": "Present"
+        "end": "Sep 2022"
       },
       "projects": [
         {
