@@ -4,6 +4,7 @@ import Download from "./download";
 import PDF from "./pdf-file";
 import Terminal from "./terminal";
 import Note from "./images/note.png";
+import Notion from "./images/notion.png";
 import Spotify from "./images/spotify.png";
 import AppStore from "./images/app-store.png";
 import Chrome from "./images/chrome.png";
@@ -17,6 +18,7 @@ const Icons = {
   Download,
   PDF,
   Note,
+  Notion,
   Spotify,
   AppStore,
   Chrome,

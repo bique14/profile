@@ -18,6 +18,7 @@ import { getCache } from "../../hooks/useCached";
 
 import "./index.css";
 import Icons from "../../icons";
+import { NotionDock } from "./Notion";
 
 interface ApplicationsProps {
   onOpen: (appType: AppType) => void;
@@ -35,18 +36,12 @@ const Applications = (props: ApplicationsProps) => {
 
   useEffect(() => {
     const loadCache = async () => {
-      // appstore
-      // chrome
-      // finder
-      // note
-      // spotify
-      // telegram
-      // vscode
       const cacheList = {
         appStore: await getCache(Icons.AppStore),
         chrome: await getCache(Icons.Chrome),
         finder: await getCache(Icons.Finder),
         note: await getCache(Icons.Note),
+        notion: await getCache(Icons.Notion),
         spotify: await getCache(Icons.Spotify),
         telegram: await getCache(Icons.Telegram),
         vscode: await getCache(Icons.VSCode),
@@ -78,6 +73,11 @@ const Applications = (props: ApplicationsProps) => {
       name: "Note",
       type: null,
       component: <NoteDock icon={appIcons.note} />,
+    },
+    {
+      name: "Notion",
+      type: null,
+      component: <NotionDock icon={appIcons.notion} />,
     },
     {
       name: "Spotify",

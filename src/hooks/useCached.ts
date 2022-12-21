@@ -43,6 +43,7 @@ const useCached = () => {
         cacheFirst(Icons.PDF),
         cacheFirst(Icons.Terminal),
         cacheFirst(Icons.Note),
+        cacheFirst(Icons.Notion),
         cacheFirst(Icons.Spotify),
         cacheFirst(Icons.AppStore),
         cacheFirst(Icons.Chrome),

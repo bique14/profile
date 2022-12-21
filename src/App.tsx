@@ -15,9 +15,9 @@ import Spotify from "./components/Spotify";
 import useLoading from "./hooks/useLoading";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 
-import "./App.css";
 import Spinner from "./components/Spinner";
 import useCached from "./hooks/useCached";
+import "./App.css";
 
 const Applications = lazy(() => import("./components/Applications"));
 
