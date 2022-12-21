@@ -1,13 +1,13 @@
 import type { AppType } from "./types";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 
 import Loading from "./components/Loading";
 import Screen from "./components/Screen";
 import MenuBar from "./components/MenuBar";
 import Terminal from "./components/Terminal";
 import Resume from "./components/Resume";
-import Applications from "./components/Applications";
+// import Applications from "./components/Applications";
 import Mobile from "./components/Mobile";
 import Login from "./components/Login";
 import Spotify from "./components/Spotify";
@@ -16,6 +16,9 @@ import useLoading from "./hooks/useLoading";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "./App.css";
+import Spinner from "./components/Spinner";
+
+const Applications = lazy(() => import("./components/Applications"));
 
 enum STATE {
   LOADING = "LOADING",
@@ -27,10 +30,16 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<string>(STATE.LOGIN);
+  const [state, setState] = useState<STATE>(STATE.SCREEN);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   useEffect(() => console.log(state), [state]);
+
+  useEffect(() => {
+    if (!isLoading && state === STATE.LOADING) {
+      setTimeout(() => setState(STATE.LOGIN), 400);
+    }
+  }, [isLoading, state]);
 
   const onLogin = () => {
     if (isDesktop) document.documentElement.requestFullscreen();
@@ -72,12 +81,6 @@ const App: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    if (!isLoading && state === STATE.LOADING) {
-      setTimeout(() => setState(STATE.LOGIN), 400);
-    }
-  }, [isLoading]);
-
   const renderFromState = (state: string) => {
     switch (state) {
       case STATE.LOADING:
@@ -92,7 +95,6 @@ const App: React.FC = () => {
                 <MenuBar />
                 <Screen>
                   <>{renderAppOpened()}</>
-
                   <Applications onOpen={onOpen} />
                 </Screen>
               </>
@@ -105,7 +107,7 @@ const App: React.FC = () => {
     }
   };
 
-  return renderFromState(state);
+  return <Suspense fallback={<Spinner />}>{renderFromState(state)}</Suspense>;
 };
 
 export default App;

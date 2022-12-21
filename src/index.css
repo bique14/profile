@@ -14,3 +14,36 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.loader {
+  aspect-ratio: 1; /* make height equal to width */
+  display: grid;
+  -webkit-mask: conic-gradient(from 22deg, #0003, #000);
+  mask: conic-gradient(from 22deg, #0003, #000);
+  animation: load 1s steps(8) infinite;
+}
+
+.loader,
+.loader:before {
+  --_g: linear-gradient(rgb(255, 255, 255) 0 0) 50%; /* update the color here */
+  /*
+   * line width: 50%
+   * line height: 5%
+  */
+  background: var(--_g) / 50% 5% space no-repeat,
+    var(--_g) / 5% 50% no-repeat space;
+}
+
+.loader:before {
+  content: "";
+  transform: rotate(45deg);
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
