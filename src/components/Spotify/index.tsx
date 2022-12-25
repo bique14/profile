@@ -1,7 +1,7 @@
 import type { AppType } from "../../types";
 import useDrag from "../../hooks/useDrag";
 import ApplicationHeaderControl from "../ApplicationHeaderControl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const APP_SLUG = "spotify";
 
@@ -15,8 +15,13 @@ const Spotify = (props: SpotifyProps) => {
 
   const [iframeLoaded, setIFrameLoaded] = useState<boolean>(false);
 
+  useEffect(() => {
+    document.body.style.cursor = "wait";
+  }, []);
+
   const handleIframeLoaded = () => {
     setIFrameLoaded(true);
+    document.body.style.cursor = "auto";
   };
 
   return (
