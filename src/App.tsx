@@ -11,6 +11,7 @@ import Resume from "./components/Resume";
 import Mobile from "./components/Mobile";
 import Login from "./components/Login";
 import Spotify from "./components/Spotify";
+import Notion from "./components/Notion";
 
 import useLoading from "./hooks/useLoading";
 import useWindowDimensions from "./hooks/useWindowDimensions";
@@ -33,9 +34,9 @@ const App: React.FC = () => {
   const { isDesktop } = useWindowDimensions();
 
   const [state, setState] = useState<STATE>(STATE.SCREEN);
-  const [appOpened, setAppOpened] = useState<AppType[]>([]);
+  const [appOpened, setAppOpened] = useState<AppType[]>(["notion"]);
 
-  useEffect(() => console.log(state), [state]);
+  useEffect(() => console.log("appOpened", appOpened), [appOpened]);
 
   useEffect(() => {
     if (!isLoading && state === STATE.LOADING) {
@@ -77,6 +78,8 @@ const App: React.FC = () => {
           return <Terminal key={appType} onClose={onClose} />;
         case "spotify":
           return <Spotify key={appType} onClose={onClose} />;
+        case "notion":
+          return <Notion key={appType} onClose={onClose} />;
         default:
           return null;
       }
