@@ -9,7 +9,8 @@ import { useRef } from "react";
 
 const RESUME: ResumeType = require("./resume.json");
 
-const APP_SLUG = "resume";
+const APP_SLUG: AppType = "resume";
+const APP_NAME: string = "Peerasorn Hemsart - resume";
 
 interface ResumeProps {
   onClose: (appType: AppType) => void;
@@ -57,7 +58,7 @@ const Resume = (props: ResumeProps) => {
       >
         <ApplicationHeaderControl appSlug={APP_SLUG} onClose={onClose} />
         <div className="flex-1 text-center text-black self-center text-sm cursor-default">
-          Peerasorn Hemsart - resume
+          {APP_NAME}
         </div>
       </div>
       <div className="flex justify-between px-2 mb-2 h-6">

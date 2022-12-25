@@ -3,7 +3,8 @@ import useDrag from "../../hooks/useDrag";
 import ApplicationHeaderControl from "../ApplicationHeaderControl";
 import { useEffect, useState } from "react";
 
-const APP_SLUG = "spotify";
+const APP_SLUG: AppType = "spotify";
+const APP_NAME: string = "Spotify";
 
 interface SpotifyProps {
   onClose: (appType: AppType) => void;
@@ -36,7 +37,7 @@ const Spotify = (props: SpotifyProps) => {
         >
           <ApplicationHeaderControl appSlug={APP_SLUG} onClose={onClose} />
           <div className="flex-1 text-center text-white self-center text-sm cursor-default">
-            Spotify
+            {APP_NAME}
           </div>
         </div>
       )}
