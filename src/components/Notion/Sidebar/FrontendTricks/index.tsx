@@ -69,15 +69,27 @@ const FrontendTricks = () => {
         url,
       };
     };
-
     const fetchCards = async () => {
-      const cardPromises = urls.map((url) =>
-        fetchMetaTags(
-          url.text,
-          `https://cors-anywhere.herokuapp.com/${url.url}`
-        )
-      );
-      const cards = await Promise.all(cardPromises);
+      const storedCards = localStorage.getItem("frontend-tricks");
+      let cards;
+
+      if (storedCards) {
+        // The value for the key "frontend-tricks" exists in local storage, so use it
+        cards = JSON.parse(storedCards);
+      } else {
+        // The value for the key "frontend-tricks" does not exist in local storage, so fetch it
+        const cardPromises = urls.map((url) =>
+          fetchMetaTags(
+            url.text,
+            `https://cors-anywhere.herokuapp.com/${url.url}`
+          )
+        );
+        cards = await Promise.all(cardPromises);
+
+        // Save the fetched data to local storage
+        localStorage.setItem("frontend-tricks", JSON.stringify(cards));
+      }
+
       setCards([...cards]);
     };
 
