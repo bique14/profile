@@ -28,6 +28,7 @@ const ApplicationsType = Object.freeze({
   resume: "resume" as const,
   terminal: "terminal" as const,
   spotify: "spotify" as const,
+  notion: "notion" as const,
 });
 
 const Applications = (props: ApplicationsProps) => {
@@ -76,7 +77,7 @@ const Applications = (props: ApplicationsProps) => {
     },
     {
       name: "Notion",
-      type: null,
+      type: ApplicationsType.notion,
       component: <NotionDock icon={appIcons.notion} />,
     },
     {
