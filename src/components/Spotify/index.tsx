@@ -44,7 +44,8 @@ const Spotify = (props: SpotifyProps) => {
 
       <iframe
         className="w-full h-full"
-        src="https://spotify-fake-lyric.netlify.app/"
+        // src="https://spotify-fake-lyric.netlify.app/"
+        src="https://spotify-lu.netlify.app/"
         title="Spotify"
         onLoad={handleIframeLoaded}
       />
