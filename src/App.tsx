@@ -33,10 +33,8 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<STATE>(STATE.SCREEN);
-  const [appOpened, setAppOpened] = useState<AppType[]>(["notion"]);
-
-  useEffect(() => console.log("appOpened", appOpened), [appOpened]);
+  const [state, setState] = useState<STATE>(STATE.LOADING);
+  const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   useEffect(() => {
     if (!isLoading && state === STATE.LOADING) {
