@@ -5,9 +5,8 @@ import Dock from "../Dock";
 
 import Resume, { ResumeDock } from "./Resume";
 import Terminal, { TerminalDock } from "./Terminal";
-import Spotify, { SpotifyDock } from "./Spotify";
+import { SpotifyDock } from "./Spotify";
 import { NoteDock } from "./Note";
-
 import { ChromeDock } from "./Chrome";
 import { TelegramDock } from "./Telegram";
 import { AppStoreDock } from "./AppStore";
