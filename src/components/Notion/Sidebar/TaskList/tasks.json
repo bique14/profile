@@ -1,0 +1,44 @@
+{
+  "todo": [
+    {
+      "title": "add more page for Notion"
+    },
+    {
+      "title": "add eslint and prettier"
+    },
+    {
+      "title": "add trash"
+    },
+    {
+      "title": "more interactable"
+    }
+  ],
+  "doing": [
+    {
+      "title": "🐶 Take Fig on a walk"
+    },
+    {
+      "title": "become a rich 💵"
+    }
+  ],
+  "done": [
+    {
+      "title": "refactor code"
+    },
+    {
+      "title": "Spotify: cache data"
+    },
+    {
+      "title": "Notion Application"
+    },
+    {
+      "title": "Notion: Frontend Tricks"
+    },
+    {
+      "title": "Notion: Safari Problems"
+    },
+    {
+      "title": "Notion: Task List"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type { AppType } from "../../types";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 import useDrag from "../../hooks/useDrag";
 import ApplicationHeaderControl from "../ApplicationHeaderControl";
@@ -32,7 +32,7 @@ const sidebarPageList = [
   },
   {
     id: PageList.TaskList,
-    name: "✅ Task List",
+    name: "✔ Task List",
   },
 ];
 
@@ -45,7 +45,6 @@ const Notion = (props: NotionProps) => {
   );
 
   const onPageSelect = (pageId: PageList) => {
-    console.log(pageId);
     setPageSelected(pageId);
   };
 

@@ -109,6 +109,7 @@ const FrontendTricks = () => {
   );
 };
 
+// TODO: move this function to global component of Notion
 const CardItem = (props: CardItemProps) => {
   const { card } = props;
 

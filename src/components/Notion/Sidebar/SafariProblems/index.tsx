@@ -4,7 +4,7 @@ const TITLE: string = "💣 Safari is Suck!";
 
 const SafariProblems = () => {
   return (
-    <div className="h-full flex flex-col overflow-scroll">
+    <div className="h-full flex flex-col w-9/12 mx-auto overflow-scroll">
       <h1 className="text-5xl font-bold mb-12">{TITLE}</h1>
 
       <div>
