@@ -31,7 +31,7 @@ const Sidebar = (props: SidebarProps) => {
         Bique's Notion
       </div>
 
-      <div className="flex flex-col gap-2 mt-6">
+      <div className="flex flex-col gap-1 mt-6">
         {list.map((l) => (
           <SidebarPageList
             key={l.id}
@@ -53,7 +53,7 @@ const SidebarPageList = (props: SidebarPageListProps) => {
 
   return (
     <div
-      className={`relative -left-3 cursor-pointer text-[rgb(155,155,155)] w-[calc(100%+24px)] px-4 py-1 rounded ${isSelected} ${hoverClass}`}
+      className={`relative -left-3 cursor-pointer text-[rgb(155,155,155)] w-[calc(100%+24px)] px-4 py-2 rounded ${isSelected} ${hoverClass}`}
       onClick={() => onPageSelect(id)}
     >
       {name}
