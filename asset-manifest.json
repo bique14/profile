@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/profile/static/css/main.7cb7cc6c.css",
-    "main.js": "/profile/static/js/main.6574f437.js",
+    "main.css": "/profile/static/css/main.37df8b5a.css",
+    "main.js": "/profile/static/js/main.a7b4a248.js",
+    "static/css/668.557d6f89.chunk.css": "/profile/static/css/668.557d6f89.chunk.css",
+    "static/js/668.871fb57d.chunk.js": "/profile/static/js/668.871fb57d.chunk.js",
     "static/js/787.48d64204.chunk.js": "/profile/static/js/787.48d64204.chunk.js",
-    "static/media/wallpaper.jpeg": "/profile/static/media/wallpaper.06a39dbd3324d17acb56.jpeg",
+    "static/media/wallpaper.jpeg": "/profile/static/media/wallpaper.657f593ac52d1c39fc7b.jpeg",
     "static/media/finder.png": "/profile/static/media/finder.6b4e1f5539afe597853e.png",
     "static/media/note.png": "/profile/static/media/note.c6e650bc1280373c5c27.png",
     "static/media/chrome.png": "/profile/static/media/chrome.fe74ad5a0c8e3484a1e4.png",
     "static/media/spotify.png": "/profile/static/media/spotify.6620a777b2ebed92f4e4.png",
     "static/media/siri.webp": "/profile/static/media/siri.2c76dece8817e2c0f213.webp",
+    "static/media/notion.png": "/profile/static/media/notion.a169d7606ea858384a0d.png",
     "static/media/app-store.png": "/profile/static/media/app-store.4d0e0509ce84cdc07545.png",
     "static/media/telegram.png": "/profile/static/media/telegram.04c3d4028b28944f72b9.png",
     "static/media/vscode.png": "/profile/static/media/vscode.d99ab65a08c3e4c5fd73.png",
     "index.html": "/profile/index.html",
-    "main.7cb7cc6c.css.map": "/profile/static/css/main.7cb7cc6c.css.map",
-    "main.6574f437.js.map": "/profile/static/js/main.6574f437.js.map",
+    "main.37df8b5a.css.map": "/profile/static/css/main.37df8b5a.css.map",
+    "main.a7b4a248.js.map": "/profile/static/js/main.a7b4a248.js.map",
+    "668.557d6f89.chunk.css.map": "/profile/static/css/668.557d6f89.chunk.css.map",
+    "668.871fb57d.chunk.js.map": "/profile/static/js/668.871fb57d.chunk.js.map",
     "787.48d64204.chunk.js.map": "/profile/static/js/787.48d64204.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cb7cc6c.css",
-    "static/js/main.6574f437.js"
+    "static/css/main.37df8b5a.css",
+    "static/js/main.a7b4a248.js"
   ]
 }
