@@ -18,3 +18,19 @@
   text-align: center;
   padding: 0 0.5rem;
 }
+
+.dock-app-wrapper {
+  transition: all 0.25s;
+}
+
+.dock-app-wrapper:hover {
+  transform: scale(1.2) translateY(-25px);
+}
+
+.dock-app-wrapper:hover + .dock-app-wrapper {
+  transform: scale(1.2) translateY(-15px);
+}
+
+.dock-app-wrapper:has(+ .dock-app-wrapper:hover) {
+  transform: scale(1.2) translateY(-15px);
+}

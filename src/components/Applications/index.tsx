@@ -172,7 +172,7 @@ const DockWrapper = (props: DockWrapperProps) => {
   const { appName, onOpen, children } = props;
 
   return (
-    <div className="relative">
+    <div className="dock-app-wrapper relative">
       <div className="dock-app" onClick={onOpen}>
         {children}
       </div>

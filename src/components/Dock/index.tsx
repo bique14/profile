@@ -7,7 +7,7 @@ const Dock = (props: DockProps) => {
 
   return (
     <div
-      className="bg-[rgba(98,98,98,0.7)] absolute z-10 bottom-0 left-1/2 p-3 rounded-t flex gap-5"
+      className="bg-[rgba(98,98,98,0.7)] absolute z-20 bottom-0 left-1/2 p-3 rounded-t flex gap-5"
       style={{ transform: "translate(-50%,0%)" }}
     >
       {children}
