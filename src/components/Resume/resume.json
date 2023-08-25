@@ -9,7 +9,7 @@
       "position": "Frontend Developer",
       "duration": {
         "start": "Sep 2022",
-        "end": "Present"
+        "end": "Dec 2022"
       },
       "projects": [
         {
@@ -208,7 +208,7 @@
     },
     {
       "name": "Spotify",
-      "link": "https://spotify-fake-lyric.netlify.app/",
+      "link": "https://spotify-lu.netlify.app/",
       "date": "Jan 2021",
       "description": "Website for practicing my CSS skill by imitating Spotify design.",
       "stacks": "Javascript, TailwindCSS"
