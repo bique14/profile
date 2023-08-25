@@ -33,7 +33,7 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<STATE>(STATE.SCREEN);
+  const [state, setState] = useState<STATE>(STATE.LOADING);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   useEffect(() => {
@@ -67,9 +67,6 @@ const App: React.FC = () => {
     const target = e.target.offsetParent;
     const screen = target.parentNode;
     const allAppOpened = [...screen.childNodes].slice(0, -1);
-
-    console.log("targe", e.target.offsetParent); // to get the element
-    console.log("screen", screen.childNodes);
 
     allAppOpened.forEach((app) => {
       if (app === target) {
