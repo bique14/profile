@@ -90,7 +90,6 @@ const Resume = (props: ResumeProps) => {
           id="paper-1"
           ref={paperRef}
           className="bg-white h-fit shadow-md flex flex-col px-4 py-10"
-          style={{ transform: "scale(1)" }}
         >
           <div className="text-center border-b-2 pb-4">
             <h1 className="font-bold">
