@@ -79,7 +79,10 @@ const Notion = (props: NotionProps) => {
           pageSelected={pageSelected}
           onPageSelect={onPageSelect}
         />
-        <div className="bg-[rgb(25,25,25)] flex-1 px-20 py-10">
+        <div
+          className="bg-[rgb(25,25,25)] flex-1 px-20 py-10"
+          draggable="false"
+        >
           {renderFromPage()}
         </div>
       </div>

@@ -7,7 +7,7 @@ import StatusBar from "./StatusBar";
 
 const MenuBar: React.FC = () => {
   return (
-    <div className="menubar">
+    <div className="menubar select-none">
       <div>
         <Apple />
       </div>
