@@ -7,7 +7,7 @@ import useDrag from "../../hooks/useDrag";
 import Icons from "../../icons";
 import { useRef } from "react";
 
-const RESUME: ResumeType = require("./resume.json");
+import RESUME from "./resume.json";
 
 const APP_SLUG: AppType = "resume";
 const APP_NAME: string = "Peerasorn Hemsart - resume";
