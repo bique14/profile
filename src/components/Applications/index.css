@@ -21,6 +21,7 @@
 
 .dock-app-wrapper {
   transition: all 0.25s;
+  padding: 0.75rem;
 }
 
 .dock-app-wrapper:hover {
