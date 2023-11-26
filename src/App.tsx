@@ -33,8 +33,13 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<STATE>(STATE.LOADING);
+  const [state, setState] = useState<STATE>(STATE.SCREEN);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
+
+  const MemoizedResume = React.memo(Resume);
+  const MemoizedTerminal = React.memo(Terminal);
+  const MemoizedSpotify = React.memo(Spotify);
+  const MemoizedNotion = React.memo(Notion);
 
   useEffect(() => {
     if (!isLoading && state === STATE.LOADING) {
@@ -65,16 +70,18 @@ const App: React.FC = () => {
 
   window.onclick = (e: any) => {
     const target = e.target.offsetParent;
-    const screen = target.parentNode;
-    const allAppOpened = [...screen.childNodes].slice(0, -1);
+    if (target) {
+      const screen = target.parentNode;
+      const allAppOpened = [...screen.childNodes].slice(0, -1);
 
-    allAppOpened.forEach((app) => {
-      if (app === target) {
-        app.style.zIndex = 20;
-      } else {
-        app.style.zIndex = 10;
-      }
-    });
+      allAppOpened.forEach((app) => {
+        if (app === target) {
+          app.style.zIndex = 30;
+        } else {
+          app.style.zIndex = 20;
+        }
+      });
+    }
   };
 
   const renderAppOpened = () => {
@@ -85,18 +92,20 @@ const App: React.FC = () => {
     return appOpened.map((appType) => {
       switch (appType) {
         case "resume":
-          return <Resume key={appType} onClose={onClose} />;
+          return <MemoizedResume key={appType} onClose={onClose} />;
         case "terminal":
-          return <Terminal key={appType} onClose={onClose} />;
+          return <MemoizedTerminal key={appType} onClose={onClose} />;
         case "spotify":
-          return <Spotify key={appType} onClose={onClose} />;
+          return <MemoizedSpotify key={appType} onClose={onClose} />;
         case "notion":
-          return <Notion key={appType} onClose={onClose} />;
+          return <MemoizedNotion key={appType} onClose={onClose} />;
         default:
           return null;
       }
     });
   };
+
+  const memoizedApps = React.useMemo(() => renderAppOpened(), [appOpened]);
 
   const renderFromState = (state: string) => {
     switch (state) {
@@ -111,8 +120,8 @@ const App: React.FC = () => {
               <>
                 <MenuBar />
                 <Screen>
-                  <>{renderAppOpened()}</>
-                  <Applications onOpen={onOpen} />
+                  <>{memoizedApps}</>
+                  <Applications appOpened={appOpened} onOpen={onOpen} />
                 </Screen>
               </>
             )}

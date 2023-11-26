@@ -20,6 +20,7 @@ import Icons from "../../icons";
 import { NotionDock } from "./Notion";
 
 interface ApplicationsProps {
+  appOpened: AppType[];
   onOpen: (appType: AppType) => void;
 }
 
@@ -31,7 +32,7 @@ const ApplicationsType = Object.freeze({
 });
 
 const Applications = (props: ApplicationsProps) => {
-  const { onOpen } = props;
+  const { appOpened, onOpen } = props;
   const [appIcons, setAppIcons] = useState<any>({});
 
   useEffect(() => {
@@ -128,15 +129,18 @@ const Applications = (props: ApplicationsProps) => {
       </AppWrapper>
 
       <Dock>
-        {dockApps.map((app) => (
-          <DockWrapper
-            key={app.name}
-            appName={app.name}
-            onOpen={() => (app.type ? onOpen(app.type) : {})}
-          >
-            {app.component}
-          </DockWrapper>
-        ))}
+        {dockApps.map((app) => {
+          return (
+            <DockWrapper
+              key={app.name}
+              appName={app.name}
+              onOpen={() => (app.type ? onOpen(app.type) : {})}
+              open={appOpened.some((x) => x === app.name.toLowerCase())}
+            >
+              {app.component}
+            </DockWrapper>
+          );
+        })}
       </Dock>
     </div>
   );
@@ -163,26 +167,32 @@ const AppWrapper = (props: AppWrapperProps) => {
 };
 
 interface DockWrapperProps {
-  appName: string;
-  onOpen: () => void;
   children: JSX.Element;
+  appName: string;
+  open: boolean;
+  onOpen: () => void;
 }
 
 const DockWrapper = (props: DockWrapperProps) => {
-  const { appName, onOpen, children } = props;
+  const { children, appName, open, onOpen } = props;
 
   return (
-    <div className="dock-app-wrapper relative">
-      <div className="dock-app" onClick={onOpen}>
-        {children}
-      </div>
+    <div className="aa relative">
+      <div className="dock-app-wrapper relative">
+        <div className="dock-app" onClick={onOpen}>
+          {children}
+        </div>
 
-      <span
-        className="dock-app-name"
-        style={{ transform: "translate(-50%, 0)" }}
-      >
-        {appName}
-      </span>
+        <span
+          className="dock-app-name"
+          style={{ transform: "translate(-50%, 0)" }}
+        >
+          {appName}
+        </span>
+      </div>
+      {open && (
+        <div className="opened-dot absolute w-1 aspect-square bg-white rounded-full left-1/2 bottom-1" />
+      )}
     </div>
   );
 };

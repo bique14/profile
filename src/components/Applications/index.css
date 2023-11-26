@@ -7,10 +7,15 @@
   display: none;
 }
 
-.dock-app:hover ~ .dock-app-name {
+.dock-app-wrapper {
+  transition: all 0.25s;
+  padding: 0.75rem;
+}
+
+.dock-app-wrapper:hover > .dock-app-name {
   display: block;
   position: absolute;
-  top: -2.75rem;
+  top: -2rem;
   left: 50%;
   border-radius: 0.25rem;
   background: rgba(41, 41, 41, 0.8);
@@ -19,19 +24,31 @@
   padding: 0 0.5rem;
 }
 
-.dock-app-wrapper {
-  transition: all 0.25s;
-  padding: 0.75rem;
-}
-
-.dock-app-wrapper:hover {
+.aa:hover > .dock-app-wrapper {
   transform: scale(1.2) translateY(-25px);
 }
 
-.dock-app-wrapper:hover + .dock-app-wrapper {
+.aa:hover + .aa > .dock-app-wrapper {
   transform: scale(1.2) translateY(-15px);
 }
 
-.dock-app-wrapper:has(+ .dock-app-wrapper:hover) {
+.aa:has(+ .aa:hover > .dock-app-wrapper) {
   transform: scale(1.2) translateY(-15px);
+}
+
+.aa:has(+ .aa:hover > .dock-app-wrapper) .opened-dot {
+  bottom: -0.25rem;
+}
+
+.opened-dot {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
