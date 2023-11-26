@@ -3,10 +3,14 @@ import "./index.css";
 
 import useDate from "../../../hooks/useDate";
 import Siri from "../../../images/siri.webp";
-import { Battery, Docker, Magnify, Wifi, Volume } from "../../../svg";
+import { Docker, Magnify, Wifi, Volume } from "../../../svg";
+
+import Battery from "./Battery";
+import useBattery from "../../../hooks/useBattery";
 
 const StatusBar: React.FC = () => {
   const { date } = useDate();
+  const { battery } = useBattery();
 
   return (
     <div className="status-bar">
@@ -20,8 +24,7 @@ const StatusBar: React.FC = () => {
         <Volume />
       </div>
       <div className="battery">
-        <span>50%</span>
-        <Battery />
+        <Battery charging={battery.charging} level={battery.level} />
       </div>
       <span className="language">A</span>
       <span id="date">{date}</span>

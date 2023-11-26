@@ -1,0 +1,13 @@
+.battery-level::after {
+  content: "";
+  position: absolute;
+  display: block;
+  right: -0.35rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 4px;
+  background-color: rgb(150, 150, 150);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
