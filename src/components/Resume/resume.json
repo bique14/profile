@@ -169,7 +169,7 @@
     },
     {
       "institution": "Triamudomsuksa Pattanakarn School",
-      "degree": "High school diploma",
+      "degree": "High school",
       "major": "Math and English Major",
       "duration": {
         "start": "2008",
@@ -178,6 +178,20 @@
     }
   ],
   "playgrounds": [
+    {
+      "name": "4000 weeks of life",
+      "link": "https://4000-weeks-of-me.vercel.app/",
+      "date": "Oct 2023",
+      "description": "Generate your image like a blurred image by your birthdate.",
+      "stacks": "Svelte, TailwindCSS, Python"
+    },
+    {
+      "name": "Youtube Music Room",
+      "link": null,
+      "date": "Jun 2023",
+      "description": "Youtube streaming room with my girlfriend.",
+      "stacks": "React, TailwindCSS, Youtube API, Firebase"
+    },
     {
       "name": "🥤 AP Finger Stacking Challenge",
       "link": "https://apfingerstacking.com/",
