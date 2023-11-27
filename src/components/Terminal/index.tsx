@@ -35,7 +35,7 @@ const Terminal = (props: TerminalProps) => {
       <div className="terminal-body">
         <div className="terminal-prompt">
           <span className="terminal-directory-text">{DIRECTORY}</span>
-          <div className="triangle-prompt"></div>
+          <div className="triangle-prompt" />
           <span className="terminal-command typewriter">{command}</span>
         </div>
         <div

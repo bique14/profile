@@ -11,7 +11,7 @@ const Battery = (props: BatterProps) => {
 
   return (
     <>
-      <span>{level * 100}%</span>
+      <span>{(level * 100).toFixed(0)}%</span>
       <div
         className="battery-level relative bg-[rgba(71,71,71,1)] w-5 h-3 rounded-sm"
         style={{

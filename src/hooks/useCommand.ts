@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const useCommand = (speed: number = 100) => {
-  const cmd = "node profile.js";
+  const cmd = " node profile.js";
   const [command, setCommand] = useState<string>("");
   const [isEnd, setIsEnd] = useState<boolean>(false);
 

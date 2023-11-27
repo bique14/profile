@@ -10,39 +10,15 @@ import { useRef } from "react";
 import RESUME from "./resume.json";
 
 const APP_SLUG: AppType = "resume";
-const APP_NAME: string = "Peerasorn Hemsart - resume";
+const APP_NAME: string = "Peerasorn Hemsart - Resume";
 
 interface ResumeProps {
   onClose: (appType: AppType) => void;
 }
 
-type ZoomType = "zoom-in" | "zoom-out";
-
 const Resume = (props: ResumeProps) => {
   const { onClose } = props;
   const { setRef, initialiseDrag } = useDrag();
-
-  const paperRef = useRef<any>();
-
-  const onClick = (zoomType: ZoomType) => {
-    const currentScale = +(paperRef.current.style.transform || 0).replace(
-      /^\D+|\)/g,
-      ""
-    );
-
-    switch (zoomType) {
-      case "zoom-in":
-        return (paperRef.current.style = `transform: scale(${
-          currentScale + 0.1
-        });`);
-      case "zoom-out":
-        return (paperRef.current.style = `transform: scale(${
-          currentScale - 0.1
-        });`);
-      default:
-        return;
-    }
-  };
 
   return (
     <div
@@ -63,19 +39,7 @@ const Resume = (props: ResumeProps) => {
       </div>
       <div className="flex justify-between px-2 mb-2 h-6">
         <div className="flex gap-1">
-          <div
-            className="bg-white px-2 flex items-center h-full rounded text-sm text-gray-400 cursor-pointer"
-            onClick={() => onClick("zoom-in")}
-          >
-            +
-          </div>
-          <div
-            className="bg-white px-2 flex items-center h-full rounded text-sm text-gray-400 cursor-pointer"
-            onClick={() => onClick("zoom-out")}
-          >
-            -
-          </div>
-          <div className="bg-white rounded self-center px-2 h-full cursor-pointer">
+          <div className="bg-white rounded self-center px-2 h-full cursor-not-allowed">
             <div className="w-4 my-1">
               <Icons.Download />
             </div>
@@ -88,7 +52,6 @@ const Resume = (props: ResumeProps) => {
       <div className="bg-[rgb(221,221,221)] h-full py-2 px-4 overflow-scroll flex flex-col gap-2">
         <div
           id="paper-1"
-          ref={paperRef}
           className="bg-white h-fit shadow-md flex flex-col px-4 py-10"
         >
           <div className="text-center border-b-2 pb-4">
