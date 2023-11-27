@@ -7,6 +7,7 @@ import Sidebar from "./Sidebar";
 import FrontendTricks from "./Sidebar/FrontendTricks";
 import TaskList from "./Sidebar/TaskList";
 import SafariProblems from "./Sidebar/SafariProblems";
+import ForkBomb from "./Sidebar/KnowledgeSharing/ForkBomb";
 
 const APP_SLUG: AppType = "notion";
 const APP_NAME: string = "Notion";
@@ -19,20 +20,29 @@ export enum PageList {
   TaskList = "task-list",
   FrontendTricks = "frontend-tricks",
   SafariProblems = "safari-problems",
+  ForkBomb = "forkbomb",
 }
 
 const sidebarPageList = [
   {
     id: PageList.FrontendTricks,
     name: "💄 Frontend Tricks",
+    component: <FrontendTricks />,
   },
   {
     id: PageList.SafariProblems,
     name: "💣 Safari is Suck!",
+    component: <SafariProblems />,
   },
   {
     id: PageList.TaskList,
     name: "✔ Task List",
+    component: <TaskList />,
+  },
+  {
+    id: PageList.ForkBomb,
+    name: "💣 Fork Bomb",
+    component: <ForkBomb />,
   },
 ];
 
@@ -49,14 +59,7 @@ const Notion = (props: NotionProps) => {
   };
 
   const renderFromPage = useCallback(() => {
-    switch (pageSelected) {
-      case PageList.FrontendTricks:
-        return <FrontendTricks />;
-      case PageList.SafariProblems:
-        return <SafariProblems />;
-      case PageList.TaskList:
-        return <TaskList />;
-    }
+    return sidebarPageList.find((page) => page.id === pageSelected)?.component;
   }, [pageSelected]);
 
   return (
