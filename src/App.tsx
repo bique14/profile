@@ -107,6 +107,7 @@ const App: React.FC = () => {
     });
   };
 
+  const memoizedMenuBar = React.useMemo(() => <MenuBar />, []);
   const memoizedApps = React.useMemo(() => renderAppOpened(), [appOpened]);
   const memoizedDocks = React.useMemo(
     () => <Applications appOpened={appOpened} onOpen={onOpen} />,
@@ -124,7 +125,7 @@ const App: React.FC = () => {
           <>
             {isDesktop && (
               <>
-                <MenuBar />
+                {memoizedMenuBar}
                 <Screen>
                   <>{memoizedApps}</>
                   {memoizedDocks}
