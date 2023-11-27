@@ -75,10 +75,12 @@ const App: React.FC = () => {
       const allAppOpened = [...screen.childNodes].slice(0, -1);
 
       allAppOpened.forEach((app) => {
-        if (app === target) {
-          app.style.zIndex = 30;
-        } else {
-          app.style.zIndex = 20;
+        if (app && app.style) {
+          if (app === target) {
+            app.style.zIndex = 30;
+          } else {
+            app.style.zIndex = 20;
+          }
         }
       });
     }
@@ -106,6 +108,10 @@ const App: React.FC = () => {
   };
 
   const memoizedApps = React.useMemo(() => renderAppOpened(), [appOpened]);
+  const memoizedDocks = React.useMemo(
+    () => <Applications appOpened={appOpened} onOpen={onOpen} />,
+    [appOpened]
+  );
 
   const renderFromState = (state: string) => {
     switch (state) {
@@ -121,7 +127,7 @@ const App: React.FC = () => {
                 <MenuBar />
                 <Screen>
                   <>{memoizedApps}</>
-                  <Applications appOpened={appOpened} onOpen={onOpen} />
+                  {memoizedDocks}
                 </Screen>
               </>
             )}
