@@ -33,7 +33,7 @@ const App: React.FC = () => {
   const { percent, isLoading } = useLoading();
   const { isDesktop } = useWindowDimensions();
 
-  const [state, setState] = useState<STATE>(STATE.SCREEN);
+  const [state, setState] = useState<STATE>(STATE.LOADING);
   const [appOpened, setAppOpened] = useState<AppType[]>([]);
 
   const MemoizedResume = React.memo(Resume);
